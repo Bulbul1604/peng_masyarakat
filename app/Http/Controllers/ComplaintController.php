@@ -37,6 +37,8 @@ class ComplaintController extends Controller
             'tgl_pengaduan' => $request->tgl_pengaduan,
             'foto' => $this->complaintService->handleUploadedImage($request->foto),
             'isi_pengaduan' => $request->isi_pengaduan,
+            'alamat_pengadu' => $request->alamat_pengadu,
+            'created_at' => now(),
         ]);
         return redirect()->route('complaint.index')->with('success', 'Pengaduan masyarakat berhasil inputkan, silahkan tunggu tanggapan!');
     }

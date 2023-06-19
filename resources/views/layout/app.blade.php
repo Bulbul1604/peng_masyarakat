@@ -20,7 +20,7 @@
         <section class="section">
             <div class="container-fluid">
                 <!-- ========== title-wrapper start ========== -->
-                <div class="title-wrapper pt-30 mb-3">
+                <div class="mb-3 title-wrapper pt-30">
                     <div class="row align-items-center">
                         <div class="col-md-6">
                             <div class="titlemb-30">
@@ -42,8 +42,8 @@
         <footer class="footer">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 order-last order-md-first">
-                        <div class="copyright text-center text-md-start">
+                    <div class="order-last col-md-6 order-md-first">
+                        <div class="text-center copyright text-md-start">
                             <p class="text-sm">
                                 Designed and Developed by
                                 <a href="https://plainadmin.com" rel="nofollow" target="_blank">
@@ -54,11 +54,7 @@
                     </div>
                     <!-- end col-->
                     <div class="col-md-6">
-                        <div class="
-                  terms
-                  d-flex
-                  justify-content-center justify-content-md-end
-                ">
+                        <div class=" terms d-flex justify-content-center justify-content-md-end">
                         </div>
                     </div>
                 </div>

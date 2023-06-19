@@ -21,7 +21,7 @@
 
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-light bg-light static-top py-3">
+    <nav class="py-3 navbar navbar-light bg-light static-top">
         <div class="container">
             <a class="navbar-brand" href="#!">
                 <img src="{{ asset('logo.png') }}" alt="" width="140">
@@ -29,9 +29,9 @@
             @auth
             <a href="{{ route('dashboard') }}" class="fw-bold text-dark">{{ ucwords(auth()->user()->name) }}</a>
             @else
-            <div class="d-inline-flex gap-3">
-                <a class="btn btn-sm btn-dark px-3 rounded-3" href="{{ route('login') }}">Login</a>
-                <a class="btn btn-sm btn-outline-dark px-3 rounded-3" href="{{ route('register') }}">Registrasi</a>
+            <div class="gap-3 d-inline-flex">
+                <a class="px-3 btn btn-sm btn-dark rounded-3" href="{{ route('login') }}">Login</a>
+                <a class="px-3 btn btn-sm btn-outline-dark rounded-3" href="{{ route('register') }}">Registrasi</a>
             </div>
             @endauth
         </div>
@@ -44,15 +44,15 @@
                 <div class="col-10">
                     <div class="text-center text-white">
                         <!-- Page heading-->
-                        <h1 class="fw-light mb-3" style="font-size: 2.6rem; letter-spacing: 0.1rem">Sistem Pengaduan
+                        <h1 class="mb-3 fw-light" style="font-size: 2.6rem; letter-spacing: 0.1rem">Sistem Pengaduan
                             Masyarakat
                         </h1>
                         <h1 class="mb-4">Kelurahan Loktuan</h1>
-                        <h5 class="fw-light mb-5">
+                        <h5 class="mb-5 fw-light">
                             Selamat datang di website pengaduan masyarakat loktuan. Sampaikan laporan dan keluhan Anda
                             langsung kepada Instansi, dan kami akan segera memprosesnya.
                         </h5>
-                        <a href="{{ route('login') }}" class="btn text-sm btn-sm btn-outline-light px-5 py-3">Buat
+                        <a href="{{ route('login') }}" class="px-5 py-3 text-sm btn btn-sm btn-outline-light">Buat
                             Laporan
                             Anda</a>
                     </div>
@@ -62,31 +62,31 @@
     </header>
 
     <!-- Icons Grid-->
-    <section class="features-icons bg-light text-center">
+    <section class="text-center features-icons bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi bi-card-list m-auto text-dark"></i>
+                    <div class="mx-auto mb-5 features-icons-item mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="m-auto bi bi-card-list text-dark"></i>
                         </div>
                         <h3>{{count($complaint)}}</h3>
-                        <p class="lead mb-0">Total Pengaduan Sistem Pengaduan Masyarakat</p>
+                        <p class="mb-0 lead">Total Pengaduan Sistem Pengaduan Masyarakat</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi bi-card-checklist m-auto text-dark"></i>
+                    <div class="mx-auto mb-5 features-icons-item mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="m-auto bi bi-card-checklist text-dark"></i>
                         </div>
                         <h3>{{count($response)}}</h3>
-                        <p class="lead mb-0">Total Tanggapan Sistem Pengaduan Masyarakat</p>
+                        <p class="mb-0 lead">Total Tanggapan Sistem Pengaduan Masyarakat</p>
                     </div>
                 </div>
                 <div class="col-lg-4">
-                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-                        <div class="features-icons-icon d-flex"><i class="bi bi-person-lines-fill m-auto text-dark"></i>
+                    <div class="mx-auto mb-0 features-icons-item mb-lg-3">
+                        <div class="features-icons-icon d-flex"><i class="m-auto bi bi-person-lines-fill text-dark"></i>
                         </div>
                         <h3>{{count($user)}}</h3>
-                        <p class="lead mb-0">Total Akun Masyarakat Sistem Pengaduan Masyarakat</p>
+                        <p class="mb-0 lead">Total Akun Masyarakat Sistem Pengaduan Masyarakat</p>
                     </div>
                 </div>
             </div>
@@ -95,31 +95,31 @@
 
     <!-- Image Showcases-->
     <section class="showcase">
-        <div class="container-fluid p-0">
+        <div class="p-0 container-fluid">
             <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                <div class="text-white col-lg-6 order-lg-2 showcase-img"
                     style="background-image: url('assets/img/bg-showcase-1.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <div class="my-auto col-lg-6 order-lg-1 showcase-text">
                     <h2>Buat Laporan</h2>
-                    <p class="lead mb-0">Sampaikan keluhan anda dengan jelas di website Sistem Pengaduan
+                    <p class="mb-0 lead">Sampaikan keluhan anda dengan jelas di website Sistem Pengaduan
                         Masyarakat (SiPeka) Kelurahan Loktuan dan jangan menyebarkan berita hoax!</p>
                 </div>
             </div>
             <div class="row g-0">
-                <div class="col-lg-6 text-white showcase-img"
+                <div class="text-white col-lg-6 showcase-img"
                     style="background-image: url('assets/img/bg-showcase-2.jpg')"></div>
-                <div class="col-lg-6 my-auto showcase-text">
+                <div class="my-auto col-lg-6 showcase-text">
                     <h2>Foto yang Jelas</h2>
-                    <p class="lead mb-0">Jangan lupa mengirimkan foto keluhan anda saat menyampaikan laporan. Silahkan
+                    <p class="mb-0 lead">Jangan lupa mengirimkan foto keluhan anda saat menyampaikan laporan. Silahkan
                         upload foto yang jelas agar memudahkan memberikan tanggapan.</p>
                 </div>
             </div>
             <div class="row g-0">
-                <div class="col-lg-6 order-lg-2 text-white showcase-img"
+                <div class="text-white col-lg-6 order-lg-2 showcase-img"
                     style="background-image: url('assets/img/bg-showcase-3.jpg')"></div>
-                <div class="col-lg-6 order-lg-1 my-auto showcase-text">
+                <div class="my-auto col-lg-6 order-lg-1 showcase-text">
                     <h2>Laporan Selesai</h2>
-                    <p class="lead mb-0">Setelah menyampaikan laporan atau keluhan silahkan tunggu sampai laporan yang
+                    <p class="mb-0 lead">Setelah menyampaikan laporan atau keluhan silahkan tunggu sampai laporan yang
                         anda berikan di tanggapi oleh petugas kelurahan.</p>
                 </div>
             </div>
@@ -127,13 +127,13 @@
     </section>
 
     <!-- Call to Action-->
-    <section class="call-to-action text-white text-center" id="signup">
+    <section class="text-center text-white call-to-action" id="signup">
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-xl-8">
                     <h4 class="mb-4 fw-light">Ada pertanyaan seputar SiPeka? Silahkan chat admin SiPeka</h4>
                     <a href="https://api.whatsapp.com/send/?phone=6288888888888&amp;text&amp;type=phone_number&amp;app_absent=0"
-                        target="_blank" class="btn btn-sm btn-light mr-1 py-2 px-3 rounded border-0">
+                        target="_blank" class="px-3 py-2 mr-1 border-0 rounded btn btn-sm btn-light">
                         <div class="d-flex align-items-center text-success">
                             <svg class="me-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                                 viewBox="0 0 24 24" style="fill: #1CC88A;">
@@ -153,11 +153,11 @@
     <footer class="footer bg-light">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 h-100 text-center text-lg-start my-auto">
-                    <p class="text-muted small mb-4 mb-lg-0">&copy; SiPeka Kelurahan Loktuan 2022. All Rights Reserved.
+                <div class="my-auto text-center col-lg-6 h-100 text-lg-start">
+                    <p class="mb-4 text-muted small mb-lg-0">&copy; SiPeka Kelurahan Loktuan 2022. All Rights Reserved.
                     </p>
                 </div>
-                <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
+                <div class="my-auto text-center col-lg-6 h-100 text-lg-end">
                     <img src="{{ asset('logo.png') }}" alt="" width="150">
                 </div>
             </div>

@@ -13,7 +13,7 @@ class Pengaduan extends Model
     use HasFactory;
     protected $table = "pengaduan";
     protected $fillable = [
-        'user_id', 'tgl_pengaduan', 'isi_pengaduan', 'foto', 'status'
+        'user_id', 'tgl_pengaduan', 'isi_pengaduan', 'foto', 'alamat_pengadu', 'status'
     ];
     protected $casts = ['tgl_pengaduan' => 'datetime'];
 
