@@ -15,11 +15,13 @@ class VerificationService
                 $query->where('status', '!=', 'selesai');
             })->get();
         } elseif (Auth::user()->akses == 'pimpinan') {
-            $verifications = Tanggapan::where('tgl_tanggapan', '!=', '')->where('isi_tanggapan', '!=', '')->whereHas('pengaduan', function (Builder $query) {
-                $query->where('status', '!=', 'selesai');
+            $verifications = Tanggapan::where('tgl_tanggapan', NULL)->where('isi_tanggapan', NULL)->whereHas('pengaduan', function (Builder $query) {
+                $query->where('status', 'konfirmasi');
             })->get();
         } elseif (Auth::user()->akses == 'petugas') {
-            $verifications = Tanggapan::where('tgl_tanggapan', NULL)->where('isi_tanggapan', NULL)->get();
+            $verifications = Tanggapan::where('tgl_tanggapan', NULL)->where('isi_tanggapan', NULL)->whereHas('pengaduan', function (Builder $query) {
+                $query->where('status', 'proses');
+            })->get();
         }
         return $verifications;
     }

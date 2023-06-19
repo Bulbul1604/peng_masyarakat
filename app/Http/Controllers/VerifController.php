@@ -45,25 +45,25 @@ class VerifController extends Controller
 
     public function update(Request $request, string $id)
     {
-        $this->validate($request, [
-            'isi_tanggapan' => 'required'
-        ], [
-            'isi_tanggapan' => 'Isi tanggapan tidak boleh kosong!'
-        ]);
         $verification = Tanggapan::findOrFail($id);
         $response = Pengaduan::where('id', $request->pengaduan_id)->first();
-        $verification->update([
-            'isi_tanggapan' => $request->isi_tanggapan,
-            'tgl_tanggapan' => now(),
-        ]);
         if (auth()->user()->akses == 'pimpinan') {
             $response->update([
-                'status' => 'selesai',
+                'status' => 'proses',
             ]);
             return redirect()->route('verif.index')->with('success', 'Data pengaduan masyarakat berhasil ditanggapi!');
         } else {
+            $this->validate($request, [
+                'isi_tanggapan' => 'required'
+            ], [
+                'isi_tanggapan' => 'Isi tanggapan tidak boleh kosong!'
+            ]);
+            $verification->update([
+                'isi_tanggapan' => $request->isi_tanggapan,
+                'tgl_tanggapan' => now(),
+            ]);
             $response->update([
-                'status' => 'konfirmasi',
+                'status' => 'selesai',
             ]);
             return redirect()->route('verif.index')->with('success', 'Data pengaduan masyarakat berhasil ditanggapi!');
         }

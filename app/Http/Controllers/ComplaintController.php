@@ -67,7 +67,7 @@ class ComplaintController extends Controller
         try {
             // Step 1 : Create User
             $complaint = Pengaduan::findOrFail($id);
-            $complaint->status = 'proses';
+            $complaint->status = 'konfirmasi';
             $complaint->save();
 
             //Step 2 : Amount Charged
